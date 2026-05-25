@@ -89,7 +89,7 @@ class _UserProfileFormState extends State<UserProfileForm> {
               controller: emailController,
               keyboardType: TextInputType.emailAddress,
               onSaved: (newValue) {
-                widget._profile.email = newValue!;
+                widget._profile.email = newValue;
               },
               validator: (value) {
                 if (value!.isNotEmpty && !value.contains('@')) {

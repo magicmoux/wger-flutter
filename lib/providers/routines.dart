@@ -195,9 +195,9 @@ class RoutinesProvider with ChangeNotifier {
           final exerciseId = setConfig.exerciseId;
           if (!exercises.containsKey(exerciseId)) {
             _logger.fine('Fetching exercise $exerciseId for routine set config');
-            exercises[exerciseId] = (await _exerciseProvider.fetchAndSetExercise(exerciseId))!;
+            exercises[exerciseId] = (await _exerciseProvider.fetchAndSetExercise(exerciseId));
           }
-          setConfig.exercise = exercises[exerciseId]!;
+          setConfig.exercise = exercises[exerciseId];
 
           setConfig.repetitionsUnit = _repetitionUnits.firstWhere(
             (e) => e.id == setConfig.repetitionsUnitId,
@@ -288,9 +288,9 @@ class RoutinesProvider with ChangeNotifier {
         for (final slotEntry in slot.entries) {
           final exerciseId = slotEntry.exerciseId;
           if (!exercises.containsKey(exerciseId)) {
-            exercises[exerciseId] = (await _exerciseProvider.fetchAndSetExercise(exerciseId))!;
+            exercises[exerciseId] = (await _exerciseProvider.fetchAndSetExercise(exerciseId));
           }
-          slotEntry.exerciseObj = exercises[exerciseId]!;
+          slotEntry.exerciseObj = exercises[exerciseId];
 
           if (slotEntry.repetitionUnitId != null) {
             slotEntry.repetitionUnitObj = _repetitionUnits.firstWhere(
@@ -325,10 +325,10 @@ class RoutinesProvider with ChangeNotifier {
         if (!exercises.containsKey(log.exerciseId)) {
           exercises[log.exerciseId] = (await _exerciseProvider.fetchAndSetExercise(
             log.exerciseId,
-          ))!;
+          ));
         }
 
-        log.exerciseBase = exercises[log.exerciseId]!;
+        log.exerciseBase = exercises[log.exerciseId];
       }
     }
 
@@ -604,7 +604,7 @@ class RoutinesProvider with ChangeNotifier {
       await deleteConfig(config.id!, type);
     } else if (config != null) {
       // Update existing value
-      configs.first.value = value!;
+      configs.first.value = value;
       await editConfig(configs.first, type);
     } else if (value != null && config == null) {
       // Create new config
@@ -669,7 +669,7 @@ class RoutinesProvider with ChangeNotifier {
 
     newLog.weightUnit = _weightUnits.firstWhere((e) => e.id == log.weightUnitId);
     newLog.repetitionUnit = _repetitionUnits.firstWhere((e) => e.id == log.repetitionsUnitId);
-    newLog.exerciseBase = (await _exerciseProvider.fetchAndSetExercise(log.exerciseId))!;
+    newLog.exerciseBase = (await _exerciseProvider.fetchAndSetExercise(log.exerciseId));
 
     final plan = findById(newLog.routineId);
 

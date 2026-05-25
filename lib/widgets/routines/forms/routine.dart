@@ -70,7 +70,7 @@ class _RoutineFormState extends State<RoutineForm> {
           return null;
         },
         onSaved: (newValue) {
-          widget._routine.name = newValue!;
+          widget._routine.name = newValue;
         },
       ),
       TextFormField(
@@ -89,7 +89,7 @@ class _RoutineFormState extends State<RoutineForm> {
           return null;
         },
         onSaved: (newValue) {
-          widget._routine.description = newValue!;
+          widget._routine.description = newValue;
         },
       ),
       TextFormField(

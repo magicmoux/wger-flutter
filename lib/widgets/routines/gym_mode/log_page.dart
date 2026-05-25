@@ -59,7 +59,7 @@ class LogPage extends ConsumerWidget {
       );
       return Container();
     }
-    final setConfigData = slotEntryPage.setConfigData!;
+    final setConfigData = slotEntryPage.setConfigData;
 
     final log = ref.read(gymLogProvider);
 

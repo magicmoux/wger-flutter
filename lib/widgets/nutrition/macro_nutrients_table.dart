@@ -33,7 +33,7 @@ class MacronutrientsTable extends StatelessWidget {
     TableRow macroRow(int indent, bool g, String title, double? Function(NutritionalGoals ng) get) {
       final goal = get(nutritionalGoals);
       final pct = get(plannedValuesPercentage);
-      final perkg = nutritionalGoalsGperKg == null ? null : get(nutritionalGoalsGperKg!);
+      final perkg = nutritionalGoalsGperKg == null ? null : get(nutritionalGoalsGperKg);
       final valFn = g ? loc.gValue : loc.kcalValue;
 
       return TableRow(

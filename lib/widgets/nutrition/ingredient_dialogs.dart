@@ -133,7 +133,7 @@ class IngredientDetails extends StatelessWidget {
                 ),
               if (snapshot.hasData) ...[
                 const SizedBox(height: 12),
-                _DietaryInfoSection(ingredient: ingredient!),
+                _DietaryInfoSection(ingredient: ingredient),
               ],
               if (snapshot.hasData && ingredient!.licenseObjectURl == null)
                 Text('Source: ${source!}'),

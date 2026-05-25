@@ -236,7 +236,7 @@ class _DayFormWidgetState extends State<DayFormWidget> {
             decoration: InputDecoration(labelText: i18n.name),
             controller: nameController,
             onSaved: (value) {
-              widget.day.name = value!;
+              widget.day.name = value;
             },
             validator: (value) {
               if (widget.day.isRest) {
@@ -262,7 +262,7 @@ class _DayFormWidgetState extends State<DayFormWidget> {
             decoration: InputDecoration(labelText: i18n.description),
             controller: descriptionController,
             onSaved: (value) {
-              widget.day.description = value!;
+              widget.day.description = value;
             },
             minLines: 2,
             maxLines: 10,
@@ -293,7 +293,7 @@ class _DayFormWidgetState extends State<DayFormWidget> {
                 ? null
                 : (value) {
                     setState(() {
-                      widget.day.type = value!;
+                      widget.day.type = value;
                     });
                   },
           ),

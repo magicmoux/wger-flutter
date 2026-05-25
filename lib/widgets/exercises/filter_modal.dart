@@ -34,7 +34,7 @@ class _ExerciseFilterModalBodyState extends State<ExerciseFilterModalBody> {
   @override
   void initState() {
     super.initState();
-    filters = Provider.of<ExercisesProvider>(context, listen: false).filters!;
+    filters = Provider.of<ExercisesProvider>(context, listen: false).filters;
   }
 
   @override

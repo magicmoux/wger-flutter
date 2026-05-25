@@ -44,7 +44,7 @@ class MealForm extends StatelessWidget {
 
   MealForm(this._planId, [meal]) {
     _meal = meal ?? Meal(plan: _planId, time: TimeOfDay.fromDateTime(DateTime.now()));
-    _timeController.text = timeToString(_meal.time)!;
+    _timeController.text = timeToString(_meal.time);
     _nameController.text = _meal.name;
   }
 
@@ -70,7 +70,7 @@ class MealForm extends StatelessWidget {
                   initialTime: _meal.time!,
                 );
                 if (pickedTime != null) {
-                  _timeController.text = timeToString(pickedTime)!;
+                  _timeController.text = timeToString(pickedTime);
                 }
               },
               onSaved: (newValue) {
@@ -125,7 +125,7 @@ Widget getMealItemForm(
     // TODO we use planId 0 here cause we don't have one and we don't need it I think?
     recent: recent.map((e) => Log.fromMealItem(e, 0, e.mealId)).toList(),
     onSave: (BuildContext context, MealItem mealItem, DateTime? dt) {
-      mealItem.mealId = meal.id!;
+      mealItem.mealId = meal.id;
       Provider.of<NutritionPlansProvider>(context, listen: false).addMealItem(mealItem, meal);
     },
     barcode: barcode ?? '',
@@ -373,7 +373,7 @@ class IngredientFormState extends State<IngredientForm> {
                         }
                       },
                       onSaved: (newValue) {
-                        _dateController.text = newValue!;
+                        _dateController.text = newValue;
                       },
                     ),
                   ),
@@ -396,11 +396,11 @@ class IngredientFormState extends State<IngredientForm> {
                           initialTime: stringToTime(_timeController.text),
                         );
                         if (pickedTime != null) {
-                          _timeController.text = timeToString(pickedTime)!;
+                          _timeController.text = timeToString(pickedTime);
                         }
                       },
                       onSaved: (newValue) {
-                        _timeController.text = newValue!;
+                        _timeController.text = newValue;
                       },
                     ),
                   ),
@@ -426,7 +426,7 @@ class IngredientFormState extends State<IngredientForm> {
                             AsyncSnapshot<Ingredient> snapshot,
                           ) {
                             if (snapshot.hasData) {
-                              _mealItem.ingredient = snapshot.data!;
+                              _mealItem.ingredient = snapshot.data;
                               return MealItemValuesTile(
                                 ingredient: _mealItem.ingredient,
                                 nutritionalValues: _mealItem.nutritionalValues,
@@ -600,7 +600,7 @@ class _PlanFormState extends State<PlanForm> {
               text: widget._plan.description,
             ),
             onSaved: (newValue) {
-              widget._plan.description = newValue!;
+              widget._plan.description = newValue;
             },
           ),
           // Start Date

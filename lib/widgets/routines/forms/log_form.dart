@@ -168,7 +168,7 @@ class _LogFormWidgetState extends ConsumerState<LogFormWidget> {
                         context,
                         listen: false,
                       ).addLog(logToSave!);
-                      final page = gymState.getSlotEntryPageByIndex()!;
+                      final page = gymState.getSlotEntryPageByIndex();
                       gymProvider.markSlotPageAsDone(page.uuid, isDone: true);
 
                       if (mounted) {

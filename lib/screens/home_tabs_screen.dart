@@ -133,7 +133,7 @@ class _HomeTabsScreenState extends ConsumerState<HomeTabsScreen>
       // Current nutritional plan
       widget._logger.info('Loading current nutritional plan');
       if (nutritionPlansProvider.currentPlan != null) {
-        final plan = nutritionPlansProvider.currentPlan!;
+        final plan = nutritionPlansProvider.currentPlan;
         await nutritionPlansProvider.fetchAndSetPlanFull(plan.id!);
       }
 
@@ -141,7 +141,7 @@ class _HomeTabsScreenState extends ConsumerState<HomeTabsScreen>
       // Current routine
       widget._logger.info('Loading current routine');
       if (routinesProvider.currentRoutine != null) {
-        final planId = routinesProvider.currentRoutine!.id!;
+        final planId = routinesProvider.currentRoutine!.id;
         await routinesProvider.fetchAndSetRoutineFull(planId);
       }
     }

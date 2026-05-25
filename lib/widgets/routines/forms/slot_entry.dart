@@ -226,7 +226,7 @@ class _SlotEntryFormState extends State<SlotEntryForm> {
               }).toList(),
               onChanged: (value) {
                 setState(() {
-                  widget.entry.type = value!;
+                  widget.entry.type = value;
                 });
               },
             ),

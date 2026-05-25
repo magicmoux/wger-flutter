@@ -585,7 +585,7 @@ class GymStateNotifier extends _$GymStateNotifier {
     }
 
     final log = Log.fromSetConfigData(slotEntryPage.setConfigData!);
-    log.routineId = state.routine.id!;
+    log.routineId = state.routine.id;
     log.iteration = state.iteration;
     ref.read(gymLogProvider.notifier).setLog(log);
   }
@@ -691,7 +691,7 @@ class GymStateNotifier extends _$GymStateNotifier {
       pages.add(page);
 
       if (page.uuid == pageEntryUUID) {
-        final setConfigData = page.slotPages.first.setConfigData!;
+        final setConfigData = page.slotPages.first.setConfigData;
 
         final List<SlotPageEntry> newSlotPages = [];
         for (var i = 1; i <= 4; i++) {

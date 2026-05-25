@@ -58,7 +58,7 @@ void main() {
     await tester.pump();
 
     final tf = tester.widget<TextFormField>(textFieldFinder);
-    final controller = tf.controller!;
+    final controller = tf.controller;
 
     expect(controller.text, '****');
     expect(controller.selection.isCollapsed, isTrue);
@@ -81,7 +81,7 @@ void main() {
     await tester.pump();
 
     final tf = tester.widget<TextFormField>(textFieldFinder);
-    final controller = tf.controller!;
+    final controller = tf.controller;
 
     // select whole text
     controller.selection = const TextSelection(baseOffset: 0, extentOffset: 5);

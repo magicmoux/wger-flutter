@@ -153,7 +153,7 @@ bool _checkAndroidXml(List<String> expectedDash, {required bool fix}) {
 
   final actual = doc.rootElement
       .findElements('locale')
-      .map((e) => e.getAttribute('android:name')!)
+      .map((e) => e.getAttribute('android:name'))
       .toList();
 
   // Convention: `en` first (matches `preferred-supported-locales: [en]` in

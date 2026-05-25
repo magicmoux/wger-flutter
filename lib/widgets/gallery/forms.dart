@@ -188,7 +188,7 @@ class _ImageFormState extends State<ImageForm> {
             maxLines: 10,
             controller: descriptionController,
             onSaved: (newValue) {
-              widget._image.description = newValue!;
+              widget._image.description = newValue;
             },
           ),
           ElevatedButton(

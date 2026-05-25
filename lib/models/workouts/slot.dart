@@ -72,7 +72,7 @@ class Slot {
     this.comment = comment ?? '';
     config = null;
     exercisesObj = exercises ?? [];
-    exercisesIds = exercisesObj.map((e) => e.id!).toList();
+    exercisesIds = exercisesObj.map((e) => e.id).toList();
     entries = entries ?? [];
     if (day != null) {
       this.day = day;
